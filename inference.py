@@ -1,6 +1,6 @@
 from os import listdir, path
 import numpy as np
-import scipy, cv2, os, sys, argparse, audio
+import scipy, cv2, os, sys, argparse
 import json, subprocess, random, string
 from tqdm import tqdm
 from glob import glob
@@ -174,6 +174,7 @@ def load_model(path):
 	return model.eval()
 
 def main():
+	import audio # Expensive import
 	if not os.path.isfile(args.face):
 		fnames = list(glob(os.path.join(args.face, '*.jpg')))
 		sorted_fnames = sorted(fnames, key=lambda f: int(os.path.basename(f).split('.')[0]))
