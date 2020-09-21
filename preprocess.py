@@ -11,8 +11,6 @@ import numpy as np
 import argparse, os, cv2, traceback, subprocess
 from tqdm import tqdm
 from glob import glob
-import audio
-from hparams import hparams as hp
 
 import face_detection
 
